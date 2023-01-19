@@ -1,17 +1,23 @@
 import React from 'react';
+import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 import Button from './Button';
 
 function App() {
+  const handleClick = () => {
+    console.log('clicked');
+  };
   return (
     <div>
       <div>
-        <Button primary rounded outline>
-          Button desu
+        <Button secondary onClick={handleClick}>
+          <GoBell />
+          <span>Button desu</span>
         </Button>
       </div>
       <div>
         <Button danger outline>
-          wow
+          <GoCloudDownload />
+          <span>wow</span>
         </Button>
       </div>
       <div>
@@ -19,7 +25,8 @@ function App() {
       </div>
       <div>
         <Button secondary rounded>
-          bibibi
+          <GoDatabase />
+          <span>bibibi</span>
         </Button>
       </div>
       <div>
