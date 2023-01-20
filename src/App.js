@@ -1,30 +1,30 @@
-import React from 'react';
-import Button from './Button';
+import { useState } from 'react';
+import Dropdown from './components/Dropdown';
 
 function App() {
+  const [selection, setSelection] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
+  const options = [
+    {
+      label: 'Red',
+      value: 'red',
+    },
+    {
+      label: 'Green',
+      value: 'green',
+    },
+    {
+      label: 'Blue',
+      value: 'blue',
+    },
+  ];
   return (
-    <div>
-      <div>
-        <Button primary rounded outline>
-          Button desu
-        </Button>
-      </div>
-      <div>
-        <Button danger outline>
-          wow
-        </Button>
-      </div>
-      <div>
-        <Button warning>heihie</Button>
-      </div>
-      <div>
-        <Button secondary rounded>
-          bibibi
-        </Button>
-      </div>
-      <div>
-        <Button danger>玉ねぎ</Button>
-      </div>
+    <div className="flex">
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
     </div>
   );
 }
