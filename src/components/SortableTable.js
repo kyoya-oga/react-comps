@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
 import useSort from '../hooks/useSort';
 import Table from './Table';
